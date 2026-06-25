@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ued体育 - 风格与稳定并重的运动信息平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      color: #1e2a3a;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 —— 杂志大标题感 */
+    .hero {
+      background: linear-gradient(145deg, #f9fafb, #eceff4);
+      border: 1px solid #d8dde4;
+      border-radius: 24px;
+      padding: 2.8rem 2rem 2.4rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.8rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #0b1a2a;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #4f5b6b;
+      border-top: 1px solid #cdd3db;
+      display: inline-block;
+      padding-top: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    /* 卡片系统 — 背景说明 + 三段介绍 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e6ec;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #142433;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #eef0f3;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1f3348;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    .card p {
+      margin-bottom: 0.9rem;
+      color: #2f3e52;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inset-note {
+      background: #f6f8fb;
+      border-left: 3px solid #b7c2d0;
+      padding: 0.8rem 1rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      margin: 1.1rem 0;
+    }
+
+    /* 场景 + 特点混合区：两列/单列自适应 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.2rem 0 0.2rem;
+    }
+
+    .feature-item {
+      background: #fafbfc;
+      border-radius: 14px;
+      padding: 1.2rem 1.2rem 1rem;
+      border: 1px solid #e5e9f0;
+      transition: background 0.15s;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1f3348;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+
+    .feature-item span {
+      font-size: 0.95rem;
+      color: #3b4a5e;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #f4f7fc;
+      border: 1px solid #dce1ea;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      margin: 2.2rem 0 1.6rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #142433;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #1f3348;
+    }
+
+    .faq-item .a {
+      color: #3f4f64;
+      padding-left: 0.3rem;
+    }
+
+    /* 页尾访问提示 */
+    .footer-prompt {
+      background: #ffffff;
+      border: 1px solid #dde2ea;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      margin-top: 1.2rem;
+    }
+
+    .footer-prompt p {
+      font-size: 1.05rem;
+      color: #2f3e52;
+    }
+
+    .footer-prompt .link-sentence {
+      margin-top: 0.6rem;
+      font-size: 1rem;
+    }
+
+    a {
+      color: #1a4d7a;
+      text-decoration: none;
+      border-bottom: 1px solid #b9c9db;
+      transition: border-color 0.2s, color 0.1s;
+    }
+
+    a:hover {
+      color: #0d2e4a;
+      border-bottom-color: #1a4d7a;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d7dde7;
+      margin: 1.6rem 0 1.2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 2rem 1.2rem 1.8rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .faq-summary {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .footer-prompt {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 杂志式横幅 -->
+  <div class="hero">
+    <h1>ued体育 · 信息入口的稳定质地</h1>
+    <div class="sub">以界面为纸，结构为轴</div>
+  </div>
+
+  <!-- 背景说明卡片（稳定入口与基调） -->
+  <div class="card">
+    <h2>从入口说起：为什么需要一个恒定的页面</h2>
+    <p>在体育信息与数据场景中，平台承担的不仅是展示，更是导航的可靠性。无论是赛事日历、统计摘要还是动态通知，用户的第一个动作往往是定位到主页。<a href="https://pc-uedsport.com">ued体育</a> 从设计之初就将“入口稳定性”作为底层逻辑——页面结构经过梳理，避免因内容堆叠造成迷失。这种克制背后是对体育内容消费节奏的理解：快速获取，不被冗杂打断。</p>
+    <div class="inset-note">
+      📌 很多专业用户反馈，日常浏览时注意力可以完全放在内容本身，而非反复寻找功能区块。这正是信息架构的价值。
+    </div>
+    <p>从视觉语言上看，浅灰背景与卡片分区降低了认知负担，细边框与柔和阴影在界面中形成明确的节奏感。每一块内容都有呼吸空间，简洁但不简陋。</p>
+  </div>
+
+  <!-- 三段自然介绍 —— 用承接方式展开不同层面 -->
+  <div class="card">
+    <h2>内容模块：特点与场景的融合</h2>
+    <p>体育数据平台容易陷入两个极端：要么信息过载，要么过于简化而失去实用纵深。在 <a href="https://pc-uedsport.com">ued体育</a> 的页面中，三段式介绍并非简单的并列，而是从“背景骨架”过渡到“使用场景”，再深入到“日常触达”。</p>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>⚙️ 结构优先</strong>
+        <span>功能区与内容区以卡片为单元，每个卡片解决一个明确的任务：预览、导航或说明。没有冗余的装饰层。</span>
+      </div>
+      <div class="feature-item">
+        <strong>📊 信息可扫读</strong>
+        <span>关键标题、摘要与FAQ采用分段设计，目光可以快速定位到兴趣点。数据或短句前置，减少阅读摩擦力。</span>
+      </div>
+      <div class="feature-item">
+        <strong>🔗 导航自然嵌入</strong>
+        <span>链接不突兀，像句子的一部分。例如在介绍页中，可以直接通过一句话进入 <a href="https://pc-uedsport.com">ued体育</a> 的完整内容结构，而无需额外寻找按钮。</span>
+      </div>
+      <div class="feature-item">
+        <strong>🔄 多端一致</strong>
+        <span>卡片与字体在桌面与移动端均保持可读性，阴影与边距的比例经过调整，避免缩放后丢失层次。</span>
+      </div>
+    </div>
+    <p style="margin-top: 1.2rem;">这种模块化配置不仅适用于首页，也为后续的内容扩展预留了位置。每个段落都可以作为独立的“杂志栏目”来阅读——这也是本页有意追求的气息。</p>
+  </div>
+
+  <!-- 第三段自然介绍：从使用场景到FAQ摘要 -->
+  <div class="card">
+    <h2>日常场景：当稳定入口成为习惯</h2>
+    <p>对于经常查询体育动态的用户来说，一个不变的主页意味着零学习成本。不需要反复适应新布局，只需关注内容本身。无论是快速浏览今日要点，还是深入了解某个专题页面，<a href="https://pc-uedsport.com">ued体育</a> 的模式都倾向于“一次定位，多次使用”。</p>
+    <p>在页面设计中，我们刻意减少了动态轮播或强推送模块，转而采用静态但结构清晰的卡片排列。原因在于：体育信息的时效性固然重要，但获取信息的环境同样影响体验。与其让用户被弹窗或无限滚动消耗精力，不如提供一份有重量、可停留的“页面杂志”。</p>
+    <div class="faq-summary">
+      <h2>常见疑问 · 快速摘要</h2>
+      <div class="faq-item">
+        <span class="q">Q：这个页面支持哪些类别的内容？</span>
+        <span class="a">A：主要围绕体育项目介绍、动态摘要和功能入口。卡片分类清晰，可根据兴趣自行选择。</span>
+      </div>
+      <div class="faq-item">
+        <span class="q">Q：页面是否会频繁更新结构？</span>
+        <span class="a">A：以稳定为优先，重大调整会提前在页内说明。目前的设计版本已平衡了灵活性与一致性。</span>
+      </div>
+      <div class="faq-item">
+        <span class="q">Q：移动设备上是否同样好用？</span>
+        <span class="a">A：是的，响应式布局确保卡片和文字在手机、平板设备上都有舒适的间距和可读性。</span>
+      </div>
+    </div>
+    <p style="font-size: 0.95rem; color: #3f4f64;">以上FAQ仅作示例，实际内容会随迭代继续补充。所有说明都基于当前页面的实际结构。</p>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-prompt">
+    <p>如果您希望更全面地了解该平台的风格与信息组织方式，可以直接访问其主页获得完整视图。</p>
+    <div class="link-sentence">
+      → 前往 <a href="https://pc-uedsport.com">ued体育</a> 探索更多栏目与内容模块。
+    </div>
+    <hr style="max-width: 260px; margin: 1rem auto 0.4rem;">
+    <p style="font-size: 0.9rem; color: #5f6d7e;">页面设计基于杂志专题式 · 浅灰背景 · 卡片分区</p>
+  </div>
+</div>
+</body>
+</html>
